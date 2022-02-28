@@ -1,0 +1,30 @@
+﻿<Window x:Class="ProjetoLuz.JanelaCompra"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetoLuz"
+        mc:Ignorable="d"
+        Title="Compra" Height="450" Width="800"
+        ResizeMode="NoResize"
+        Background="SlateBlue"
+        WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label x:Name="LabelComprador" Content="Comprador :" HorizontalAlignment="Left" Margin="146,84,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="BoxVendedores" ItemsSource="{Binding Source={x:Static local:ClienteFuncionario.Cliente}}" SelectedIndex="{Binding IndiceSenha}"  HorizontalAlignment="Left" Margin="227,86,0,0" VerticalAlignment="Top" Width="173">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Nome}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        
+        </ComboBox>
+        <Label x:Name="LabelCliente" Content="Senha :" HorizontalAlignment="Left" Margin="160,150,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="BotãoCalcula" Command="{Binding Preco}"  Content="Finalizar Compra" HorizontalAlignment="Left" Margin="227,240,0,0" VerticalAlignment="Top" Height="54" Width="173"/>
+        <TextBox x:Name="Senha" Text="{Binding Senha, Mode=OneWayToSource}" HorizontalAlignment="Left" Margin="227,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" Height="22"/>
+        <TextBox x:Name="PrecoTotal" Text="{Binding PrecoTela}" HorizontalAlignment="Left" Margin="448,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" Height="22"/>
+        <Label x:Name="LabelCliente_Copy" Content="Preço Total" HorizontalAlignment="Left" Margin="500,222,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
