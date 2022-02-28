@@ -1,0 +1,65 @@
+﻿<Window x:Class="ProjetoLuz.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetoLuz" d:DataContext="{d:DesignInstance Type=local:MainWindowsVM}"
+        mc:Ignorable="d"
+        Title="LP Compras"
+        Height="600" 
+        Width="800"
+        ResizeMode="NoResize"
+        Background="SlateBlue"
+        WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterScreen" 
+         >
+
+    <Border Background="DarkSlateBlue"
+            CornerRadius="38">
+
+        <Grid>
+            <Button x:Name="BotaoCadastro" Command="{Binding Comando}" Content="Cadastrar" HorizontalAlignment="Left" Margin="64,500,0,0" VerticalAlignment="Top" Height="22" Width="67" />
+            <Image x:Name="Imagem1" HorizontalAlignment="Left" Height="130" Margin="64,36,0,0" VerticalAlignment="Top" Width="246" Source="/Bebida.jpg" Stretch="Fill"/>
+            <Image x:Name="ImagemComida" HorizontalAlignment="Left" Height="130" Margin="456,36,0,0" VerticalAlignment="Top" Width="246" Source="/Comida.jpg" Stretch="Fill"/>
+            <Image x:Name="ImagemLimpeza" HorizontalAlignment="Left" Height="130" Margin="64,292,0,0" VerticalAlignment="Top" Width="246" Source="/Limpeza.jpg" Stretch="Fill"/>
+            <Image x:Name="ImagemFruta" HorizontalAlignment="Left" Height="130" Margin="456,292,0,0" VerticalAlignment="Top" Width="246" Source="/Frutas.jpg" Stretch="Fill"/>
+            <ComboBox HorizontalAlignment="Left" Margin="67,193,0,0" VerticalAlignment="Top" Width="243">
+                <ComboBoxItem>Nenhum Item</ComboBoxItem>
+                <ComboBoxItem>Água</ComboBoxItem>
+                <ComboBoxItem>Refrigerante</ComboBoxItem>
+                <ComboBoxItem>Vodka</ComboBoxItem>
+            </ComboBox>
+
+            <ComboBox HorizontalAlignment="Left" Margin="456,193,0,0" VerticalAlignment="Top" Width="243">
+                <ComboBoxItem>Nenhum Item</ComboBoxItem>
+                <ComboBoxItem>Hamburguer</ComboBoxItem>
+                <ComboBoxItem>Rosquinha</ComboBoxItem>
+                <ComboBoxItem>Bolacha</ComboBoxItem>
+            </ComboBox>
+
+            <ComboBox HorizontalAlignment="Left" Margin="64,445,0,0" VerticalAlignment="Top" Width="246">
+                <ComboBoxItem>Nenhum Item</ComboBoxItem>
+                <ComboBoxItem>Desinfetante</ComboBoxItem>
+                <ComboBoxItem>Água Sanitária</ComboBoxItem>
+                <ComboBoxItem>Esponjas</ComboBoxItem>
+            </ComboBox>
+
+            <ComboBox HorizontalAlignment="Left" Margin="456,445,0,0" VerticalAlignment="Top" Width="242">
+                <ComboBoxItem>Nenhum Item</ComboBoxItem>
+                <ComboBoxItem>Abacaxi</ComboBoxItem>
+                <ComboBoxItem>Maçã</ComboBoxItem>
+                <ComboBoxItem>Limão</ComboBoxItem>
+            </ComboBox>
+            <Button x:Name="BotaoCompra" Command="{Binding ComandoCompra}" Content="Comprar" HorizontalAlignment="Left" Margin="669,500,0,0" VerticalAlignment="Top" Height="22" Width="67" />
+            <TextBox x:Name="QuantidadeBebidas" HorizontalAlignment="Left" Margin="332,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" Height="22"/>
+            <Label x:Name="LabelQuantidade1" Content="Qt." HorizontalAlignment="Left" Margin="332,162,0,0" VerticalAlignment="Top" Height="26" Width="32"/>
+            <TextBox x:Name="QuantidadeBebidas_Copy" HorizontalAlignment="Left" Margin="332,445,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" Height="22"/>
+            <TextBox x:Name="QuantidadeBebidas_Copy1" HorizontalAlignment="Left" Margin="721,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" Height="22"/>
+            <TextBox x:Name="QuantidadeBebidas_Copy2" HorizontalAlignment="Left" Margin="721,445,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" Height="22"/>
+            <Label x:Name="LabelQuantidade1_Copy" Content="Qt." HorizontalAlignment="Left" Margin="721,162,0,0" VerticalAlignment="Top" Height="26" Width="32"/>
+            <Label x:Name="LabelQuantidade1_Copy1" Content="Qt." HorizontalAlignment="Left" Margin="332,414,0,0" VerticalAlignment="Top" Height="26" Width="32"/>
+            <Label x:Name="LabelQuantidade1_Copy2" Content="Qt." HorizontalAlignment="Left" Margin="721,414,0,0" VerticalAlignment="Top" Height="26" Width="32"/>
+        </Grid>
+
+    </Border>
+</Window>

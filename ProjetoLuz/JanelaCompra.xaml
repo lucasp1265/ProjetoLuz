@@ -1,0 +1,21 @@
+﻿<Window x:Class="ProjetoLuz.JanelaCompra"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetoLuz"
+        mc:Ignorable="d"
+        Title="Compra" Height="450" Width="800"
+        ResizeMode="NoResize"
+        Background="SlateBlue"
+        WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label x:Name="LabelVendedor" Content="Vendedor :" HorizontalAlignment="Left" Margin="146,84,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="BoxVendedores"  HorizontalAlignment="Left" Margin="227,86,0,0" VerticalAlignment="Top" Width="173"/>
+        <ComboBox x:Name="BoxClientes"  HorizontalAlignment="Left" Margin="227,152,0,0" VerticalAlignment="Top" Width="173"/>
+        <Label x:Name="LabelCliente" Content="Comprador :" HorizontalAlignment="Left" Margin="146,148,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="BotãoCalcula" Content="Calcular Preço" HorizontalAlignment="Left" Margin="227,240,0,0" VerticalAlignment="Top" Height="54" Width="173"/>
+
+    </Grid>
+</Window>
