@@ -20,8 +20,6 @@ namespace ProjetoLuz
         public string Password { get; set; }
         public bool Permissions { get; set; }
 
-        public bool HabilitaBotao { get; set; }
-
         private ObservableCollection<Usuario> users;
 
 
