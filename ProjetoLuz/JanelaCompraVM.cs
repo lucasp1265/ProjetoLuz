@@ -32,7 +32,7 @@ namespace ProjetoLuz
                 //Converte o valor da compra para string e notifica a mudança na variável
                 PrecoTela = PrecoTotal.ToString();
                 Notifica(nameof(PrecoTela));
-
+        
             }, (object _) =>
             {
                 //Verifica se a senha inserida é igual a do cadastro

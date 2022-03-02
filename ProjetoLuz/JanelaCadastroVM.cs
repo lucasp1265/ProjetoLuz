@@ -20,6 +20,8 @@ namespace ProjetoLuz
         public string Password { get; set; }
         public bool Permissions { get; set; }
 
+        public bool HabilitaBotao { get; set; }
+
         private ObservableCollection<Usuario> users;
 
 
@@ -55,7 +57,7 @@ namespace ProjetoLuz
                 //Deleta o usuário selecionado das duas listas
                 //Remove recebe o índice do nome que vai ser removido da primeira lista
                 ClienteFuncionario.Deleta(users[Remove]);    
-                users.RemoveAt(Remove);
+                    users.RemoveAt(Remove);
             
             },(object _) =>
             {
@@ -63,7 +65,7 @@ namespace ProjetoLuz
                 return users.Count!=0;
             });
         }
-        
+
         // Retorna a lista de Usuários
         public ObservableCollection<Usuario> Users
         {
