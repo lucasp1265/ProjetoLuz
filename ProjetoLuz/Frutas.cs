@@ -15,10 +15,12 @@ namespace ProjetoLuz
         {
 
         }
-        public override void CalculaPreco(int quantidade, int indice)
+        public override string CalculaPreco(int quantidade, int indice)
         {
 
             PrecoCarrinho = PrecoCarrinho + (precos[indice] * quantidade);
+
+            return frutas[indice];
 
         }
     }

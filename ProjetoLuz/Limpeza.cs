@@ -27,12 +27,13 @@ namespace ProjetoLuz
             }
         }
 
-        public override void CalculaPreco(int quantidade, int indice)
+        public override string CalculaPreco(int quantidade, int indice)
         {
 
             PrecoCarrinho += (int)(precos[indice] * quantidade * 0.8);
             PrecoCarrinho = Desconto(quantidade);
 
+            return limpezas[indice];
         }
     }
 }

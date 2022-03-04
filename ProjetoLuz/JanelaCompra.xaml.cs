@@ -27,6 +27,7 @@ namespace ProjetoLuz
             InitializeComponent();
         }
 
+
         //Somas os valores dos preços e envia eles para a classe JanelaCompraVM
         public void Recebeprecos(int precos1, int precos2, int precos3, int precos4)
         {

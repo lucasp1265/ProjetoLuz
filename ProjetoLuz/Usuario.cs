@@ -13,6 +13,7 @@ namespace ProjetoLuz
         protected string user;
         protected string password;
         public bool permissao;
+        public List<string> listaProdutos;
 
 
         public Usuario()
@@ -52,6 +53,18 @@ namespace ProjetoLuz
                 this.user = user;
                 this.password = password;
                 this.permissao = permissao;
+            }
+        }
+
+        public void AdiconaLista(string produto)
+        {
+            if (listaProdutos == null)
+            {
+                listaProdutos = new List<string>();
+            }
+            else
+            {
+                listaProdutos.Add(produto);
             }
         }
 

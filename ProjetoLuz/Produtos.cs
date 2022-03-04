@@ -19,7 +19,12 @@ namespace ProjetoLuz
            
            
         }
-        abstract public void CalculaPreco(int indice, int quantidade);
+        public void AdicionaProduto(int indiceCompra, int indiceVenda, string produto)
+        {
+            ClienteFuncionario.Cliente[indiceCompra].listaProdutos.Add(produto);
+            ClienteFuncionario.Funcionario[indiceVenda].listaProdutos.Add(produto);
+        }
+        abstract public string CalculaPreco(int indice, int quantidade);
 
 
     }

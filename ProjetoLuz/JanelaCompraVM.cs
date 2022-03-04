@@ -31,7 +31,7 @@ namespace ProjetoLuz
             {
                //Chama a função de salario para o funcionario selecionado
                 ClienteFuncionario.AdicionaSalario(IndiceVenda, PrecoTotal);
-                
+                ClienteFuncionario.AdicionaProdutos(IndiceSenha, IndiceVenda,);
         
             }, (object _) =>
             {
@@ -39,11 +39,6 @@ namespace ProjetoLuz
                 return ClienteFuncionario.Cliente[IndiceSenha].Password == Senha;
 
             });
-        }
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void Notifica(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         //Método para receber o valor total da classe JanelaCompra

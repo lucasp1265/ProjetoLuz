@@ -56,6 +56,11 @@ namespace ProjetoLuz
                 }
             
         }
+        static public void AdicionaProdutos(int indiceCompra, int indiceVenda, string produto)
+        {
+            Cliente[indiceCompra].listaProdutos.Add(produto);
+            Funcionario[indiceVenda].listaProdutos.Add(produto);
+        }
 
         static public void AdicionaSalario(int indice, int venda)
         {

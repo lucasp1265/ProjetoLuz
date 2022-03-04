@@ -54,6 +54,7 @@ namespace ProjetoLuz
             frutasobj = new Frutas();
         }
 
+
         public void IniciaComando()
         {
             //Comando que cria uma nova Janela para o cadastro
@@ -88,6 +89,7 @@ namespace ProjetoLuz
                 comidasobj.CalculaPreco(QuantidadeComida, comida);
                 frutasobj.CalculaPreco(QuantidadeFruta, fruta);
                 limpezasobj.CalculaPreco(QuantidadeLimpeza,limpeza);
+                
 
             }, (object _) =>
             {
