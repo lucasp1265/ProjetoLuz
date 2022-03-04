@@ -14,7 +14,7 @@ namespace ProjetoLuz
 
         public string Senha { get; set; }
 
-        public string PrecoTela { get; set; }
+        public int IndiceVenda { get; set; }
 
         public int PrecoTotal;
 
@@ -29,9 +29,9 @@ namespace ProjetoLuz
         {
             Preco = new RelayCommand((object _) =>
             {
-                //Converte o valor da compra para string e notifica a mudança na variável
-                PrecoTela = PrecoTotal.ToString();
-                Notifica(nameof(PrecoTela));
+               //Chama a função de salario para o funcionario selecionado
+                ClienteFuncionario.AdicionaSalario(IndiceVenda, PrecoTotal);
+                
         
             }, (object _) =>
             {

@@ -13,6 +13,8 @@ namespace ProjetoLuz
         static public ObservableCollection<Usuario> Cliente { get; private set; }
         static public ObservableCollection<Usuario> Funcionario { get; private set; }
 
+        static public ObservableCollection<int> Salario;
+
         public static void Inicia()
         {
             if(Cliente == null || Funcionario == null)
@@ -20,6 +22,7 @@ namespace ProjetoLuz
                 //Inicializa as duas listas e aloca na memória
                 Cliente = new ObservableCollection<Usuario>();
                 Funcionario = new ObservableCollection<Usuario>();
+                Salario = new ObservableCollection<int>();
             }
 
         }
@@ -45,12 +48,19 @@ namespace ProjetoLuz
                 if(User.permissao == true)
                 {
                     Funcionario.Add(User);
+                    Salario.Add(0);
                 }
                 else
                 {
                     Cliente.Add(User);
                 }
             
+        }
+
+        static public void AdicionaSalario(int indice, int venda)
+        {
+            
+            Salario[indice] += (int)(venda * 0.2);
         }
     }
 }

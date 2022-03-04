@@ -73,6 +73,11 @@ namespace ProjetoLuz
                 newWindow2.Show();
                 newWindow2.Recebeprecos(bebidasobj.PrecoCarrinho,comidasobj.PrecoCarrinho,frutasobj.PrecoCarrinho,limpezasobj.PrecoCarrinho);
 
+            }, (object _) =>
+            {
+
+                return (ClienteFuncionario.Funcionario.Count != 0) && (ClienteFuncionario.Cliente.Count != 0);
+
             });
 
             //Comando que Recebe as quantidades e os produtos selecionados e retorna o valor de cada categoria
@@ -83,6 +88,11 @@ namespace ProjetoLuz
                 comidasobj.CalculaPreco(QuantidadeComida, comida);
                 frutasobj.CalculaPreco(QuantidadeFruta, fruta);
                 limpezasobj.CalculaPreco(QuantidadeLimpeza,limpeza);
+
+            }, (object _) =>
+            {
+
+                return (ClienteFuncionario.Funcionario.Count != 0)&&(ClienteFuncionario.Cliente.Count!=0);
 
             });
         }
