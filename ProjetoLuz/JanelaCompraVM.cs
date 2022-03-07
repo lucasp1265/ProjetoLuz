@@ -31,7 +31,7 @@ namespace ProjetoLuz
             {
                //Chama a função de salario para o funcionario selecionado
                 ClienteFuncionario.AdicionaSalario(IndiceVenda, PrecoTotal);
-                ClienteFuncionario.AdicionaProdutos(IndiceSenha, IndiceVenda,);
+                
         
             }, (object _) =>
             {

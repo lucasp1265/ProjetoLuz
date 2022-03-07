@@ -29,6 +29,8 @@ namespace ProjetoLuz
         public int fruta { get; set; }
         public int limpeza { get; set; }
 
+        public string BebidaString { get; set; }
+
         public Bebidas bebidasobj { get; set; }
         public Comidas comidasobj { get; set; }
         public Frutas frutasobj { get; set; }

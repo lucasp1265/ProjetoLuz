@@ -24,32 +24,32 @@
             <Image x:Name="ImagemLimpeza" HorizontalAlignment="Left" Height="130" Margin="64,292,0,0" VerticalAlignment="Top" Width="246" Source="/Limpeza.jpg" Stretch="Fill"/>
             <Image x:Name="ImagemFruta" HorizontalAlignment="Left" Height="130" Margin="456,292,0,0" VerticalAlignment="Top" Width="246" Source="/Frutas.jpg" Stretch="Fill"/>
             <ComboBox HorizontalAlignment="Left"  SelectedIndex="{Binding bebida}" Margin="67,193,0,0" VerticalAlignment="Top" Width="243">
-                <ComboBoxItem>Nenhum Item</ComboBoxItem>
-                <ComboBoxItem>Água</ComboBoxItem>
-                <ComboBoxItem>Refrigerante</ComboBoxItem>
-                <ComboBoxItem>Vodka</ComboBoxItem>
-                   
+                <ComboBoxItem Content="Nenhum Item"/>
+                <ComboBoxItem Content="Água"/>
+                <ComboBoxItem Content="Refrigerante"/>
+                <ComboBoxItem Content="Vodka"/>
+
             </ComboBox>
 
             <ComboBox HorizontalAlignment="Left" SelectedIndex="{Binding comida}" Margin="456,193,0,0" VerticalAlignment="Top" Width="243">
-                <ComboBoxItem>Nenhum Item</ComboBoxItem>
-                <ComboBoxItem>Hamburguer</ComboBoxItem>
-                <ComboBoxItem>Rosquinha</ComboBoxItem>
-                <ComboBoxItem>Bolacha</ComboBoxItem>
+                <ComboBoxItem Content="Nenhum Item"/>
+                <ComboBoxItem Content="Hamburguer"/>
+                <ComboBoxItem Content="Rosquinha"/>
+                <ComboBoxItem Content="Bolacha"/>
             </ComboBox>
 
             <ComboBox HorizontalAlignment="Left" SelectedIndex="{Binding limpeza}" Margin="64,445,0,0" VerticalAlignment="Top" Width="246">
-                <ComboBoxItem>Nenhum Item</ComboBoxItem>
-                <ComboBoxItem>Desinfetante</ComboBoxItem>
-                <ComboBoxItem>Água Sanitária</ComboBoxItem>
-                <ComboBoxItem>Esponjas</ComboBoxItem>
+                <ComboBoxItem Content="Nenhum Item"/>
+                <ComboBoxItem Content="Desinfetante"/>
+                <ComboBoxItem Content="Água Sanitária"/>
+                <ComboBoxItem Content="Esponjas"/>
             </ComboBox>
 
             <ComboBox HorizontalAlignment="Left" SelectedIndex="{Binding fruta}" Margin="456,445,0,0" VerticalAlignment="Top" Width="242">
-                <ComboBoxItem>Nenhum Item</ComboBoxItem>
-                <ComboBoxItem>Abacaxi</ComboBoxItem>
-                <ComboBoxItem>Maçã</ComboBoxItem>
-                <ComboBoxItem>Melancia</ComboBoxItem>
+                <ComboBoxItem Content="Nenhum Item"/>
+                <ComboBoxItem Content="Abacaxi"/>
+                <ComboBoxItem Content="Maçã"/>
+                <ComboBoxItem Content="Melancia"/>
             </ComboBox>
             
             <Button x:Name="BotaoCompra" Command="{Binding ComandoCompra}" Content="Comprar" HorizontalAlignment="Left" Margin="669,500,0,0" VerticalAlignment="Top" Height="22" Width="67" />

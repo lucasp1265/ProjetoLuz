@@ -24,16 +24,19 @@
         <Label x:Name="LabelSenha" Content="Senha : " HorizontalAlignment="Left" Margin="88,219,0,0" VerticalAlignment="Top"/>
         <RadioButton Content="Funcionario" IsChecked = "{Binding Permissions}"  HorizontalAlignment="Left" Margin="88,303,0,0" VerticalAlignment="Top"/>
         <RadioButton Content="Cliente" HorizontalAlignment="Left" Margin="219,303,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="BotaoCadastro" Command="{Binding ComandoCadastro }" Content="Cadastrar" HorizontalAlignment="Left" Margin="304,293,0,0" VerticalAlignment="Top" Height="35" Width="70"/>
+        <Button x:Name="BotaoCadastro" Command="{Binding ComandoCadastro }" Content="Cadastrar" HorizontalAlignment="Left" Margin="299,322,0,0" VerticalAlignment="Top" Height="35" Width="70"/>
         <TextBox x:Name="Password" HorizontalAlignment="Left" Text="{Binding Password}" Margin="159,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" InputScope="Password" />
-        <Button x:Name="RemoveCadastro" Command="{Binding ComandoRemove}" Content="Remover Cadastro" HorizontalAlignment="Left" Margin="408,292,0,0" VerticalAlignment="Top" Height="35" Width="212"/>
-        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" ItemsSource="{Binding Users}"  Margin="408,10,0,97">
+        <Button x:Name="RemoveCadastro" Command="{Binding ComandoRemove}" Content="Remover Cadastro" HorizontalAlignment="Left" Margin="408,322,0,0" VerticalAlignment="Top" Height="34" Width="212"/>
+        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" ItemsSource="{Binding ListaFiltrada}"  Margin="408,4,10,143">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Nome}"/>
+                    <GridViewColumn Header="Nome" DisplayMemberBinding="{Binding Nome}" Width="90"/>
+                    <GridViewColumn Header="Usuário" DisplayMemberBinding="{Binding User}" Width="90"/>
                 </GridView>
             </ListView.View>
         </ListView>
+        <TextBox x:Name="Filtro" HorizontalAlignment="Left" Text="{Binding StringFiltro}" Margin="408,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" Height="31"/>
+        <Label x:Name="Pesquisa" Content="Pesquisar" HorizontalAlignment="Left" Margin="484,246,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
