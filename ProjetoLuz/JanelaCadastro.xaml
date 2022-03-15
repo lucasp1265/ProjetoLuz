@@ -27,7 +27,7 @@
         <Button x:Name="BotaoCadastro" Command="{Binding ComandoCadastro }" Content="Cadastrar" HorizontalAlignment="Left" Margin="299,322,0,0" VerticalAlignment="Top" Height="35" Width="70"/>
         <TextBox x:Name="Password" HorizontalAlignment="Left" Text="{Binding Password}" Margin="159,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" InputScope="Password" />
         <Button x:Name="RemoveCadastro" Command="{Binding ComandoRemove}" Content="Remover Cadastro" HorizontalAlignment="Left" Margin="408,322,0,0" VerticalAlignment="Top" Height="34" Width="212"/>
-        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" ItemsSource="{Binding ListaFiltrada}"  Margin="408,4,10,143">
+        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" SelectedIndex="{Binding Remove}" ItemsSource="{Binding ListaFiltrada}"  Margin="408,4,10,143">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Nome" DisplayMemberBinding="{Binding Nome}" Width="90"/>

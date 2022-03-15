@@ -37,21 +37,14 @@ namespace ProjetoLuz
 
         // Soma a variável PrecoCarrinho com a quantidade recebida vezes o preço do produto e faz o desconto
         // caso comprar comida e bebida juntos
-        public override string CalculaPreco(int quantidade, int indice)
+        public override void CalculaPreco(int quantidade, int indice)
         {
 
             PrecoCarrinho += (int)(precos[indice] * quantidade * 0.9);
             Desconto(quantidade);
 
-            if (quantidade == 0 || indice == 0) 
-            
-            { 
-                return null; 
-            }
-            else
-            {
-                return bebidasNomes[indice];
-            }
+            if(quantidade != 0 && indice!= 0)
+            JanelaCompraVM.produtos += $" {bebidasNomes[indice]}-{quantidade} ";
         }
     }
    

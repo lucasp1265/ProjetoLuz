@@ -20,8 +20,13 @@ namespace ProjetoLuz
 
         public int IndiceSenha { get; set; }
 
+        static public string produtos;
+
+        public Bebidas produtosBanco;
+
         public JanelaCompraVM()
         {
+            produtosBanco = new Bebidas();
             IniciaComando();
         }
 
@@ -29,8 +34,10 @@ namespace ProjetoLuz
         {
             Preco = new RelayCommand((object _) =>
             {
-               //Chama a função de salario para o funcionario selecionado
-                ClienteFuncionario.AdicionaSalario(IndiceVenda, PrecoTotal);
+                if(produtos!=null)
+                produtosBanco.AdicionaProduto(IndiceSenha, IndiceVenda, produtos, MainWindowsVM.conexaoTeste);
+                produtos = null;
+                
                 
         
             }, (object _) =>
@@ -40,6 +47,7 @@ namespace ProjetoLuz
 
             });
         }
+
 
         //Método para receber o valor total da classe JanelaCompra
         public void Recebe(int preco)

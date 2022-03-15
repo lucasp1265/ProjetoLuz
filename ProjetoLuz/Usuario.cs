@@ -20,6 +20,17 @@ namespace ProjetoLuz
         {
 
         }
+        public Usuario(string nome, string user, string password, bool permissao)
+        {
+            //Verifica se os campos não estão nulos e atribui os valores 
+            if (nome != null || user != null || password != null)
+            {
+                this.nome = nome;
+                this.user = user;
+                this.password = password;
+                this.permissao = permissao;
+            }
+        }
         public string Nome
         {
             get { return nome; }
@@ -31,7 +42,7 @@ namespace ProjetoLuz
         }
         public string Password
         {
-            get { return user; }
+            get { return password; }
             set { user = value; }
         }
 
@@ -44,27 +55,38 @@ namespace ProjetoLuz
             User = senha;
         }
 
-        public Usuario(string nome, string user, string password, bool permissao)
+        public Usuario(string nome, string user, string password, bool permissao,IConexao conexao)
         {
-           //Verifica se os campos não estão nulos e atribui os valores 
-            if (nome != null || user != null || password != null)
+            //Verifica se os campos não estão nulos e atribui os valores 
+            if (nome != null && user != null && password != null)
             {
-                this.nome = nome;
-                this.user = user;
-                this.password = password;
-                this.permissao = permissao;
+                try
+                {
+                    
+                    conexao.Insere(nome, user, password, permissao);
+                    this.nome = nome;
+                    this.user = user;
+                    this.password = password;
+                    this.permissao = permissao;
+                }
+
+                catch
+                {
+                    throw;
+                }
             }
         }
 
-        public void AdiconaLista(string produto)
+
+        public void RemoveBanco(IConexao conexao)
         {
-            if (listaProdutos == null)
-            {
-                listaProdutos = new List<string>();
+            try 
+            { 
+                conexao.Remove(user);
             }
-            else
+            catch 
             {
-                listaProdutos.Add(produto);
+                throw;
             }
         }
 

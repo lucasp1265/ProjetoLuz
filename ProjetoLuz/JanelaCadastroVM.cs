@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
@@ -31,8 +32,6 @@ namespace ProjetoLuz
 
         {
 
-
-            
             IniciaComando();
             Inicia();
             IniciaRemove();
@@ -63,15 +62,26 @@ namespace ProjetoLuz
                 Notifica(nameof(StringFiltro));
             }
         }
-       
+       //Erro com o try catch
+       //Comentar com o fernando que mesmo se uma parte do try der errado ele executa outra parte
+       //Mesmo sem se conectar com o banco ele cria um novo objeto usuário
+       //Comentar sobre as duas listas criadas, garbage collector deve apagar, mas será a melhor opção
         public void IniciaComando()
         {
             ComandoCadastro = new RelayCommand((object _) =>
             {
                 //Adiciona o usuário ao ObservableCollection e na classe ClienteFuncionario para fazer a separação
-                users.Add(new Usuario(Name, User, Password, Permissions));
-                ClienteFuncionario.Adiciona(users.Last());
-
+                try
+                {
+                    MessageBox.Show("Teste");
+                    string teste2 = "teste2"; 
+                    users.Add(new Usuario(Name, User, Password, Permissions, MainWindowsVM.conexaoTeste));
+                    ClienteFuncionario.Adiciona(users.Last());
+                }
+                catch
+                {
+                    MessageBox.Show("Erro ao inserir Usuario, tente novamente =/");
+                }
             });
         }
 
@@ -85,8 +95,18 @@ namespace ProjetoLuz
             {
                 //Deleta o usuário selecionado das duas listas
                 //Remove recebe o índice do nome que vai ser removido da primeira lista
-                ClienteFuncionario.Deleta(users[Remove]);    
+                try
+                {
+                    users[Remove].RemoveBanco(MainWindowsVM.conexaoTeste);
+                    ClienteFuncionario.Deleta(users[Remove]);
                     users.RemoveAt(Remove);
+                }
+                catch
+                {
+                    MessageBox.Show("Erro ao remover Usuario, tente novamente =/");
+                }
+                    
+                
             
             },(object _) =>
             {
@@ -118,8 +138,19 @@ namespace ProjetoLuz
         {
             if ( users == null)
             {
-       
-                users = new ObservableCollection<Usuario>();
+                try
+                {
+                    users = new ObservableCollection<Usuario>();
+                    MainWindowsVM.conexaoTeste.Popula(users);
+                    foreach (Usuario usuario in users)
+                    {
+                        ClienteFuncionario.Adiciona(usuario);
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Erro ao conectar");
+                }
             }
         }
 

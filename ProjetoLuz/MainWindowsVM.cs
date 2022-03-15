@@ -36,10 +36,12 @@ namespace ProjetoLuz
         public Frutas frutasobj { get; set; }
         public Limpeza limpezasobj { get; set; }
 
+        static public IConexao conexaoTeste;
+
         public MainWindowsVM()
         {
 
-            
+            conexaoTeste = new ConexaoMySQL();
             IniciaComando();
             ClienteFuncionario.Inicia();
             IniciaCarrinho();
@@ -63,6 +65,7 @@ namespace ProjetoLuz
             Comando = new RelayCommand((object _) =>
             {
                 
+                 
                  JanelaCadastro newWindow = new JanelaCadastro();
                  newWindow.Show();
 
@@ -75,6 +78,7 @@ namespace ProjetoLuz
                 JanelaCompra newWindow2 = new JanelaCompra();
                 newWindow2.Show();
                 newWindow2.Recebeprecos(bebidasobj.PrecoCarrinho,comidasobj.PrecoCarrinho,frutasobj.PrecoCarrinho,limpezasobj.PrecoCarrinho);
+
 
             }, (object _) =>
             {

@@ -16,12 +16,13 @@ namespace ProjetoLuz
         }
 
 
-        public override string CalculaPreco(int quantidade, int indice)
+        public override void CalculaPreco(int quantidade, int indice)
         {
 
             PrecoCarrinho += (int)(precos[indice] * quantidade * 0.95);
 
-            return comidas[indice];
+            if (quantidade != 0 && indice != 0)
+            JanelaCompraVM.produtos += $" {comidas[indice]}-{quantidade} ";
 
         }
     }
